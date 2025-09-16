@@ -304,7 +304,7 @@
                 <div id="downloadLinks"></div>
             </div>
         </div>
-        <div class="version">version: 1.0.0</div>
+        <div class="version">version: 1.0.1</div>
     </div>
 
     <script>
@@ -475,6 +475,7 @@
 
                                 // Handle different field types
                                 const fieldType = field.constructor.name;
+                                console.log('field', field);
 
                                 console.log(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
                                 addLog(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
