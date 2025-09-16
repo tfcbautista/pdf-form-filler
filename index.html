@@ -304,7 +304,7 @@
                 <div id="downloadLinks"></div>
             </div>
         </div>
-        <div class="version">version: 1.0.1</div>
+        <div class="version">version: 1.0.2</div>
     </div>
 
     <script>
@@ -480,21 +480,10 @@
                                 console.log(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
                                 addLog(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
 
-                                if (fieldType.includes('TextField')) {
-                                    field.setText(value.toString());
-                                    fieldsFilledCount++;
-                                } else if (fieldType.includes('CheckBox')) {
-                                    if (value && value.toLowerCase() !== 'false' && value !== '0') {
-                                        field.check();
-                                    }
-                                    fieldsFilledCount++;
-                                } else if (fieldType.includes('Dropdown')) {
-                                    field.select(value.toString());
-                                    fieldsFilledCount++;
-                                } else if (fieldType.includes('RadioGroup')) {
-                                    field.select(value.toString());
-                                    fieldsFilledCount++;
-                                }
+                                field.setText(value.toString());
+                                fieldsFilledCount++;
+
+
                             } catch (fieldError) {
                                 // Field not found or couldn't be filled - this is normal
                             }
