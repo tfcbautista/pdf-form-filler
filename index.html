@@ -491,6 +491,10 @@
                         
                         addLog(`Filled ${fieldsFilledCount} fields for row ${rowNum}`);
                         
+                        // Flatten the form to remove interactive fields and make data permanent
+                        form.flatten();
+                        addLog(`Flattened form for row ${rowNum} - fields are now static text`);
+                        
                         // Generate filename from first column value or row number
                         const firstColumnValue = Object.values(row)[0] || `document_${rowNum}`;
                         const filename = sanitizeFilename(firstColumnValue.toString()) + '.pdf';
