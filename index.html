@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #dfdfdf;
             min-height: 100vh;
             padding: 20px;
         }
@@ -32,7 +32,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: #4facfe 0%;
             color: white;
             padding: 40px;
             text-align: center;
@@ -257,7 +257,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>PDF Form Filler - Flatten</h1>
+            <h1>PDF Merge</h1>
             <p>Upload a PDF template and CSV data to generate personalized documents</p>
         </div>
 
@@ -475,10 +475,8 @@
 
                                 // Handle different field types
                                 const fieldType = field.constructor.name;
-                                console.log('field', field);
-
-                                console.log(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
-                                addLog(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
+                                
+                                addLog(`Filling field "${columnName}" with value "${value}"`);
 
                                 field.setText(value.toString());
                                 fieldsFilledCount++;
