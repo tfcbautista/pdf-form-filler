@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,14 @@
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -29,30 +30,30 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
             padding: 40px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 2.5em;
             font-weight: 300;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        
+
         .header p {
             font-size: 1.1em;
             opacity: 0.9;
         }
-        
+
         .content {
             padding: 40px;
         }
-        
+
         .upload-section {
             margin-bottom: 30px;
             padding: 30px;
@@ -61,25 +62,25 @@
             border: 2px dashed #dee2e6;
             transition: all 0.3s ease;
         }
-        
+
         .upload-section:hover {
             border-color: #4facfe;
             background: #f0f8ff;
         }
-        
+
         .upload-section h3 {
             color: #333;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
-        
+
         .file-input-wrapper {
             position: relative;
             display: inline-block;
             width: 100%;
             margin-bottom: 15px;
         }
-        
+
         .file-input {
             width: 100%;
             padding: 12px;
@@ -88,28 +89,28 @@
             font-size: 16px;
             transition: border-color 0.3s ease;
         }
-        
+
         .file-input:focus {
             outline: none;
             border-color: #4facfe;
             box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
         }
-        
+
         .file-status {
             margin-top: 10px;
             font-size: 14px;
         }
-        
+
         .status-success {
             color: #28a745;
             font-weight: 500;
         }
-        
+
         .status-error {
             color: #dc3545;
             font-weight: 500;
         }
-        
+
         .process-btn {
             width: 100%;
             padding: 15px 30px;
@@ -123,18 +124,18 @@
             transition: all 0.3s ease;
             margin-top: 20px;
         }
-        
+
         .process-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         .process-btn:disabled {
             background: #6c757d;
             cursor: not-allowed;
             transform: none;
         }
-        
+
         .progress-section {
             margin-top: 30px;
             padding: 20px;
@@ -142,7 +143,7 @@
             border-radius: 10px;
             display: none;
         }
-        
+
         .progress-bar {
             width: 100%;
             height: 20px;
@@ -151,20 +152,20 @@
             overflow: hidden;
             margin-bottom: 15px;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #4facfe, #00f2fe);
             width: 0%;
             transition: width 0.3s ease;
         }
-        
+
         .progress-text {
             text-align: center;
             font-weight: 500;
             color: #333;
         }
-        
+
         .results-section {
             margin-top: 30px;
             padding: 20px;
@@ -172,12 +173,12 @@
             border-radius: 10px;
             display: none;
         }
-        
+
         .results-section h3 {
             color: #333;
             margin-bottom: 15px;
         }
-        
+
         .download-link {
             display: inline-block;
             padding: 8px 16px;
@@ -188,11 +189,11 @@
             margin: 5px 5px 5px 0;
             transition: background 0.3s ease;
         }
-        
+
         .download-link:hover {
             background: #218838;
         }
-        
+
         .log-section {
             margin-top: 20px;
             padding: 15px;
@@ -202,14 +203,14 @@
             max-height: 200px;
             overflow-y: auto;
         }
-        
+
         .log-entry {
             font-family: 'Courier New', monospace;
             font-size: 13px;
             margin-bottom: 5px;
             color: #333;
         }
-        
+
         .instructions {
             background: #e3f2fd;
             border: 1px solid #bbdefb;
@@ -217,75 +218,79 @@
             padding: 20px;
             margin-bottom: 30px;
         }
-        
+
         .instructions h3 {
             color: #1565c0;
             margin-bottom: 10px;
         }
-        
+
         .instructions ul {
             margin-left: 20px;
             color: #333;
         }
-        
+
         .instructions li {
             margin-bottom: 8px;
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
                 border-radius: 15px;
             }
-            
+
             .header {
                 padding: 30px 20px;
             }
-            
+
             .header h1 {
                 font-size: 2em;
             }
-            
+
             .content {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>PDF Form Filler - Flatten</h1>
             <p>Upload a PDF template and CSV data to generate personalized documents</p>
         </div>
-        
+
         <div class="content">
             <div class="instructions">
                 <h3>📋 Instructions</h3>
                 <ul>
                     <li><strong>PDF Template:</strong> Upload a PDF file with interactive form fields</li>
-                    <li><strong>CSV Data:</strong> Upload a CSV file where column headers match your PDF field names</li>
-                    <li><strong>Field Matching:</strong> CSV columns like "city", "population" should match PDF form field names</li>
-                    <li><strong>Output:</strong> Each CSV row will generate a separate PDF named after the first column value</li>
+                    <li><strong>CSV Data:</strong> Upload a CSV file where column headers match your PDF field names
+                    </li>
+                    <li><strong>Field Matching:</strong> CSV columns like "city", "population" should match PDF form
+                        field names</li>
+                    <li><strong>Output:</strong> Each CSV row will generate a separate PDF named after the first column
+                        value</li>
                 </ul>
             </div>
-            
+
             <div class="upload-section">
                 <h3>📄 PDF Template</h3>
                 <input type="file" id="pdfFile" class="file-input" accept=".pdf" />
                 <div id="pdfStatus" class="file-status"></div>
             </div>
-            
+
             <div class="upload-section">
                 <h3>📊 CSV Data</h3>
                 <input type="file" id="csvFile" class="file-input" accept=".csv" />
                 <div id="csvStatus" class="file-status"></div>
             </div>
-            
+
             <button id="processBtn" class="process-btn" disabled>
                 🚀 Generate PDFs
             </button>
-            
+
             <div id="progressSection" class="progress-section">
                 <div class="progress-bar">
                     <div id="progressFill" class="progress-fill"></div>
@@ -293,7 +298,7 @@
                 <div id="progressText" class="progress-text">Processing...</div>
                 <div id="logSection" class="log-section"></div>
             </div>
-            
+
             <div id="resultsSection" class="results-section">
                 <h3>✅ Generated Files</h3>
                 <div id="downloadLinks"></div>
@@ -305,39 +310,39 @@
         let pdfTemplate = null;
         let csvData = null;
         let generatedFiles = [];
-        
+
         // File input handlers
         document.getElementById('pdfFile').addEventListener('change', handlePDFUpload);
         document.getElementById('csvFile').addEventListener('change', handleCSVUpload);
         document.getElementById('processBtn').addEventListener('click', processPDFs);
-        
+
         async function handlePDFUpload(event) {
             const file = event.target.files[0];
             const status = document.getElementById('pdfStatus');
-            
+
             if (!file) {
                 pdfTemplate = null;
                 status.innerHTML = '';
                 updateProcessButton();
                 return;
             }
-            
+
             if (file.type !== 'application/pdf') {
                 status.innerHTML = '<span class="status-error">❌ Please select a PDF file</span>';
                 pdfTemplate = null;
                 updateProcessButton();
                 return;
             }
-            
+
             try {
                 const arrayBuffer = await file.arrayBuffer();
                 pdfTemplate = arrayBuffer;
-                
+
                 // Inspect PDF fields
                 const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
                 const form = pdfDoc.getForm();
                 const fields = form.getFields();
-                
+
                 status.innerHTML = `
                     <span class="status-success">✅ PDF loaded successfully</span><br>
                     <small>Found ${fields.length} form fields: ${fields.map(f => f.getName()).join(', ')}</small>
@@ -346,32 +351,32 @@
                 status.innerHTML = '<span class="status-error">❌ Error loading PDF: ' + error.message + '</span>';
                 pdfTemplate = null;
             }
-            
+
             updateProcessButton();
         }
-        
+
         function handleCSVUpload(event) {
             const file = event.target.files[0];
             const status = document.getElementById('csvStatus');
-            
+
             if (!file) {
                 csvData = null;
                 status.innerHTML = '';
                 updateProcessButton();
                 return;
             }
-            
+
             if (!file.name.toLowerCase().endsWith('.csv')) {
                 status.innerHTML = '<span class="status-error">❌ Please select a CSV file</span>';
                 csvData = null;
                 updateProcessButton();
                 return;
             }
-            
+
             Papa.parse(file, {
                 header: true,
                 skipEmptyLines: true,
-                complete: function(results) {
+                complete: function (results) {
                     if (results.errors.length > 0) {
                         status.innerHTML = '<span class="status-error">❌ CSV parsing errors: ' + results.errors.map(e => e.message).join(', ') + '</span>';
                         csvData = null;
@@ -385,19 +390,19 @@
                     }
                     updateProcessButton();
                 },
-                error: function(error) {
+                error: function (error) {
                     status.innerHTML = '<span class="status-error">❌ Error parsing CSV: ' + error.message + '</span>';
                     csvData = null;
                     updateProcessButton();
                 }
             });
         }
-        
+
         function updateProcessButton() {
             const btn = document.getElementById('processBtn');
             btn.disabled = !pdfTemplate || !csvData;
         }
-        
+
         function addLog(message) {
             const logSection = document.getElementById('logSection');
             const logEntry = document.createElement('div');
@@ -406,20 +411,20 @@
             logSection.appendChild(logEntry);
             logSection.scrollTop = logSection.scrollHeight;
         }
-        
+
         function updateProgress(current, total, message) {
             const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
-            
+
             const percentage = (current / total) * 100;
             progressFill.style.width = percentage + '%';
             progressText.textContent = message;
         }
-        
+
         function sanitizeFilename(name) {
             return name.replace(/[^a-zA-Z0-9\-_\s]/g, '_').replace(/\s+/g, '_');
         }
-        
+
         function downloadBlob(blob, filename) {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -430,45 +435,49 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
-        
+
         async function processPDFs() {
             if (!pdfTemplate || !csvData) return;
-            
+
             const progressSection = document.getElementById('progressSection');
             const resultsSection = document.getElementById('resultsSection');
             const downloadLinks = document.getElementById('downloadLinks');
-            
+
             // Reset UI
             progressSection.style.display = 'block';
             resultsSection.style.display = 'none';
             downloadLinks.innerHTML = '';
             document.getElementById('logSection').innerHTML = '';
             generatedFiles = [];
-            
+
             addLog(`Starting to process ${csvData.length} rows...`);
-            
+
             try {
                 for (let i = 0; i < csvData.length; i++) {
                     const row = csvData[i];
                     const rowNum = i + 1;
-                    
+
                     addLog(`Processing row ${rowNum}: ${JSON.stringify(row)}`);
                     updateProgress(i, csvData.length, `Processing row ${rowNum} of ${csvData.length}...`);
-                    
+
                     try {
                         // Load fresh PDF for each row
                         const pdfDoc = await PDFLib.PDFDocument.load(pdfTemplate);
                         const form = pdfDoc.getForm();
-                        
+
                         // Fill form fields
                         let fieldsFilledCount = 0;
                         Object.keys(row).forEach(columnName => {
                             try {
                                 const field = form.getField(columnName);
                                 const value = row[columnName] || '';
-                                
+
                                 // Handle different field types
                                 const fieldType = field.constructor.name;
+
+                                console.log(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
+                                addLog(`Filling field "${columnName}" with value "${value}" (as ${fieldType})`);
+
                                 if (fieldType.includes('TextField')) {
                                     field.setText(value.toString());
                                     fieldsFilledCount++;
@@ -488,45 +497,45 @@
                                 // Field not found or couldn't be filled - this is normal
                             }
                         });
-                        
+
                         addLog(`Filled ${fieldsFilledCount} fields for row ${rowNum}`);
-                        
+
                         // Flatten the form to remove interactive fields and make data permanent
                         form.flatten();
                         addLog(`Flattened form for row ${rowNum} - fields are now static text`);
-                        
+
                         // Generate filename from first column value or row number
                         const firstColumnValue = Object.values(row)[0] || `document_${rowNum}`;
                         const filename = sanitizeFilename(firstColumnValue.toString()) + '.pdf';
-                        
+
                         // Save PDF
                         const pdfBytes = await pdfDoc.save();
                         const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                        
+
                         generatedFiles.push({
                             blob: blob,
                             filename: filename,
                             rowData: row
                         });
-                        
+
                         addLog(`✅ Generated: ${filename}`);
-                        
+
                     } catch (rowError) {
                         addLog(`❌ Error processing row ${rowNum}: ${rowError.message}`);
                     }
-                    
+
                     // Small delay to prevent blocking
                     if (i % 5 === 0) {
                         await new Promise(resolve => setTimeout(resolve, 10));
                     }
                 }
-                
+
                 // Show results
                 updateProgress(csvData.length, csvData.length, `Completed! Generated ${generatedFiles.length} PDFs`);
-                
+
                 if (generatedFiles.length > 0) {
                     resultsSection.style.display = 'block';
-                    
+
                     // Create download links
                     generatedFiles.forEach((file, index) => {
                         const link = document.createElement('a');
@@ -539,7 +548,7 @@
                         };
                         downloadLinks.appendChild(link);
                     });
-                    
+
                     // Add download all button
                     if (generatedFiles.length > 1) {
                         const downloadAllBtn = document.createElement('button');
@@ -556,10 +565,10 @@
                         downloadLinks.appendChild(document.createElement('br'));
                         downloadLinks.appendChild(downloadAllBtn);
                     }
-                    
+
                     addLog(`🎉 Process completed successfully! ${generatedFiles.length} files ready for download.`);
                 }
-                
+
             } catch (error) {
                 addLog(`❌ Fatal error: ${error.message}`);
                 updateProgress(0, 100, 'Error occurred during processing');
@@ -567,4 +576,5 @@
         }
     </script>
 </body>
+
 </html>
